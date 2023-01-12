@@ -3,7 +3,7 @@ const config = require('./src/config');
 module.exports = {
   siteMetadata: {
     title: 'Ramesh Sunkara',
-    description: 'Ramesh Sunkara is Enterprise Software Architect based in Raleigh, NC',
+    description: 'Ramesh Sunkara is an Enterprise Software Architect based in Raleigh, NC',
     siteUrl: 'https://rsunkara.com', // No trailing slash allowed!
     image: '/demo.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@rameshtalks',
