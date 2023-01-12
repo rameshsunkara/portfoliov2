@@ -65,8 +65,8 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m an Enterprise Software Architect based in Raleigh - Durham, NC. <br />
-        Currently working as Principal Cloud Developer at{' '}
+        I’m an Enterprise Software Architect based in Raleigh - Durham, NC. <br />I am currently
+        working as Principal Cloud Developer at{' '}
         <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
           HPE
         </a>

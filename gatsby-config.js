@@ -5,7 +5,7 @@ module.exports = {
     title: 'Ramesh Sunkara',
     description: 'Ramesh Sunkara is an Enterprise Software Architect based in Raleigh, NC',
     siteUrl: 'https://rsunkara.com', // No trailing slash allowed!
-    image: '/demo.png', // Path to your image you placed in the 'static' folder
+    image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@rameshtalks',
   },
   plugins: [
