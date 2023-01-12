@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
@@ -190,7 +190,7 @@ const Projects = () => {
     }
   `);
 
-  const [showMore, setShowMore] = useState(false);
+  const [showMore] = useState(false);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
@@ -265,11 +265,7 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
-
-      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        view the archive
-      </Link>
+      <h2 ref={revealTitle}>Outside of Work</h2>
 
       <ul className="projects-grid">
         {prefersReducedMotion ? (
@@ -301,10 +297,6 @@ const Projects = () => {
           </TransitionGroup>
         )}
       </ul>
-
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
-        Show {showMore ? 'Less' : 'More'}
-      </button>
     </StyledProjectsSection>
   );
 };

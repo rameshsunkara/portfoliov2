@@ -5,8 +5,12 @@ import TransitionStyles from './TransitionStyles';
 import PrismStyles from './PrismStyles';
 
 const GlobalStyle = createGlobalStyle`
-  ${fonts};
-  ${variables};
+  ${fonts}
+
+  ;
+  ${variables}
+
+  ;
 
   html {
     box-sizing: border-box;
@@ -55,12 +59,15 @@ const GlobalStyle = createGlobalStyle`
     scrollbar-width: thin;
     scrollbar-color: var(--dark-slate) var(--navy);
   }
+
   ::-webkit-scrollbar {
     width: 12px;
   }
+
   ::-webkit-scrollbar-track {
     background: var(--navy);
   }
+
   ::-webkit-scrollbar-thumb {
     background-color: var(--dark-slate);
     border: 3px solid var(--navy);
@@ -179,7 +186,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(40px, 8vw, 60px);
   }
 
-  .numbered-heading {
+  .small-heading {
+    margin: 0;
+    font-size: clamp(40px, 8vw, 30px);
+  }
+
+  .unnumbered-heading {
     display: flex;
     align-items: center;
     position: relative;
@@ -192,7 +204,6 @@ const GlobalStyle = createGlobalStyle`
       position: relative;
       bottom: 4px;
       counter-increment: section;
-      content: '0' counter(section) '.';
       margin-right: 10px;
       color: var(--green);
       font-family: var(--font-mono);
@@ -282,6 +293,7 @@ const GlobalStyle = createGlobalStyle`
     &:focus {
       outline: 0;
     }
+
     &:focus,
     &:active {
       &::placeholder {
@@ -317,10 +329,12 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       list-style: none;
       font-size: var(--fz-lg);
+
       li {
         position: relative;
         padding-left: 30px;
         margin-bottom: 10px;
+
         &:before {
           content: '▹';
           position: absolute;
@@ -441,9 +455,13 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-  ${TransitionStyles};
+  ${TransitionStyles}
 
-  ${PrismStyles};
+  ;
+
+  ${PrismStyles}
+
+  ;
 `;
 
 export default GlobalStyle;

@@ -43,11 +43,11 @@ const StyledSocialLinks = styled.div`
 const StyledCredit = styled.div`
   color: var(--light-slate);
   font-family: var(--font-mono);
-  font-size: var(--fz-xxs);
+  font-size: var(--fz-xxxs);
   line-height: 1;
 
   a {
-    padding: 10px;
+    padding: 5px;
   }
 
   .github-stats {
@@ -106,7 +106,7 @@ const Footer = () => {
 
       <StyledCredit tabindex="-1">
         <a href="https://github.com/bchiang7/v4">
-          <div>Designed &amp; Built by Brittany Chiang</div>
+          <div>Design adopted from bchiang7/v4</div>
 
           {githubInfo.stars && githubInfo.forks && (
             <div className="github-stats">

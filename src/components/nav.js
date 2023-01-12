@@ -110,7 +110,6 @@ const StyledLinks = styled.div`
         padding: 10px;
 
         &:before {
-          content: '0' counter(item) '.';
           margin-right: 5px;
           color: var(--green);
           font-size: var(--fz-xxs);
