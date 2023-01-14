@@ -6,6 +6,8 @@ import { srConfig } from '@config';
 import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
+import { groupBy, keys } from 'lodash';
+import PropTypes from 'prop-types';
 
 const StyledJobsSection = styled.section`
   max-width: 700px;
@@ -162,6 +164,20 @@ const StyledTabPanel = styled.div`
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
   }
+
+  .xs-range {
+    margin: -8px 0px 20px 0px;
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+  }
+
+  .previous-job-title {
+    margin-top: 22px;
+    h4 {
+      font-weight: normal;
+    }
+  }
 `;
 
 const Jobs = () => {
@@ -188,6 +204,8 @@ const Jobs = () => {
   `);
 
   const jobsData = data.jobs.edges;
+  const transformedJobsData = groupBy(jobsData, job => job.node.frontmatter.company);
+  const companyList = keys(transformedJobsData);
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -248,33 +266,28 @@ const Jobs = () => {
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
-          {jobsData &&
-            jobsData.map(({ node }, i) => {
-              const { company } = node.frontmatter;
-              return (
-                <StyledTabButton
-                  key={i}
-                  isActive={activeTabId === i}
-                  onClick={() => setActiveTabId(i)}
-                  ref={el => (tabs.current[i] = el)}
-                  id={`tab-${i}`}
-                  role="tab"
-                  tabIndex={activeTabId === i ? '0' : '-1'}
-                  aria-selected={activeTabId === i ? true : false}
-                  aria-controls={`panel-${i}`}>
-                  <span>{company}</span>
-                </StyledTabButton>
-              );
-            })}
+          {companyList &&
+            companyList.map((company, i) => (
+              <StyledTabButton
+                key={i}
+                isActive={activeTabId === i}
+                onClick={() => setActiveTabId(i)}
+                ref={el => (tabs.current[i] = el)}
+                id={`tab-${i}`}
+                role="tab"
+                tabIndex={activeTabId === i ? '0' : '-1'}
+                aria-selected={activeTabId === i ? true : false}
+                aria-controls={`panel-${i}`}>
+                <span>{company}</span>
+              </StyledTabButton>
+            ))}
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
         <StyledTabPanels>
-          {jobsData &&
-            jobsData.map(({ node }, i) => {
-              const { frontmatter, html } = node;
-              const { title, url, company, range } = frontmatter;
-
+          {companyList &&
+            companyList.map((comp, i) => {
+              const currentCompanyRoles = transformedJobsData[comp];
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
                   <StyledTabPanel
@@ -284,19 +297,27 @@ const Jobs = () => {
                     aria-labelledby={`tab-${i}`}
                     aria-hidden={activeTabId !== i}
                     hidden={activeTabId !== i}>
-                    <h3>
-                      <span>{title}</span>
-                      <span className="company">
-                        &nbsp;@&nbsp;
-                        <a href={url} className="inline-link">
-                          {company}
-                        </a>
-                      </span>
-                    </h3>
+                    {currentCompanyRoles.map((companyRole, rIdx) => {
+                      const { node } = companyRole;
+                      const { frontmatter, html } = node;
 
-                    <p className="range">{range}</p>
-
-                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                      const { title, url, company, range } = frontmatter;
+                      return (
+                        <div key={rIdx}>
+                          {rIdx === 0 ? ( // decorate current role differently
+                            <ActiveJobTitle
+                              title={title}
+                              url={url}
+                              range={range}
+                              company={company}
+                              html={html}
+                            />
+                          ) : (
+                            <PreviousJobTitle title={title} range={range} html={html} />
+                          )}
+                        </div>
+                      );
+                    })}
                   </StyledTabPanel>
                 </CSSTransition>
               );
@@ -305,6 +326,46 @@ const Jobs = () => {
       </div>
     </StyledJobsSection>
   );
+};
+
+const ActiveJobTitle = ({ title, url, company, range, html }) => (
+  <React.Fragment>
+    <h3>
+      <span>{title}</span>
+      <span className="company">
+        &nbsp;@&nbsp;
+        <a href={url} className="inline-link">
+          {company}
+        </a>
+      </span>
+    </h3>
+    <p className="range">{range}</p>
+    <div dangerouslySetInnerHTML={{ __html: html }} />
+  </React.Fragment>
+);
+
+ActiveJobTitle.propTypes = {
+  title: PropTypes.string,
+  url: PropTypes.string,
+  company: PropTypes.string,
+  range: PropTypes.string,
+  html: PropTypes.string,
+};
+
+const PreviousJobTitle = ({ title, range, html }) => (
+  <div className="previous-job-title">
+    <h4>
+      <span>{title}</span>
+    </h4>
+    <p className="xs-range">{range}</p>
+    <div dangerouslySetInnerHTML={{ __html: html }} />
+  </div>
+);
+
+PreviousJobTitle.propTypes = {
+  title: PropTypes.string,
+  range: PropTypes.string,
+  html: PropTypes.string,
 };
 
 export default Jobs;
