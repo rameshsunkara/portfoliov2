@@ -188,7 +188,7 @@ const GlobalStyle = createGlobalStyle`
 
   .small-heading {
     margin: 0;
-    font-size: clamp(40px, 8vw, 30px);
+    font-size: clamp(24px, 6vw, 30px);
   }
 
   .unnumbered-heading {

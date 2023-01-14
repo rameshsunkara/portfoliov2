@@ -65,9 +65,9 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m an Enterprise Software Architect based in Raleigh - Durham, NC. <br />I am currently
-        working as Principal Cloud Developer at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
+        I’m an Enterprise Software Architect based in Raleigh - Durham, NC and currently working as
+        Principal Cloud Developer at{' '}
+        <a href="https://www.hpe.com/us/en/home.html" target="_blank" rel="noreferrer">
           HPE
         </a>
         .
@@ -100,3 +100,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+// .small-heading clamp(40px,8vw,30px)

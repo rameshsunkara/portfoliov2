@@ -1,14 +1,11 @@
 ---
-date: '2018-05-14'
+date: '2021-01-01'
 title: 'Principal Cloud Developer'
 company: 'HPE'
 location: 'Raleigh - Durham, NC'
-range: 'Oct 2016 - Present'
+range: 'Feb 2021 - Present'
 url: 'https://www.hpe.com/'
 ---
 
-- Working on developing InfoSight Platform to span InfoSight across HPE Portfolio
-- Leading Wellness overhaul initiative (UI)
-- Involved in several cross domain initiatives as part of InfoSight platformization
-- Developed diverse reusable components which can support convoluted use cases
-- Designed and developed several key pages of the InfoSight app (Volume, Pool, Array List and Detail pages)
+- Currently, involved in building Unified Support Experience for HPE Green Lake Cloud Platform.
+- Took multiple initiatives to scale up the development.
