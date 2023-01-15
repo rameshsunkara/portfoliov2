@@ -65,7 +65,7 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m an Enterprise Software Architect based in Raleigh - Durham, NC and currently working as
+        I’m an Enterprise Software Architect based in Raleigh - Durham, NC, currently working as
         Principal Cloud Developer at{' '}
         <a href="https://www.hpe.com/us/en/home.html" target="_blank" rel="noreferrer">
           HPE
