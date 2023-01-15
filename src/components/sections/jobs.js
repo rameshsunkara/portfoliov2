@@ -180,6 +180,46 @@ const StyledTabPanel = styled.div`
   }
 `;
 
+const ActiveJobTitle = ({ title, url, company, range, html }) => (
+  <React.Fragment>
+    <h3>
+      <span>{title}</span>
+      <span className="company">
+        &nbsp;@&nbsp;
+        <a href={url} className="inline-link">
+          {company}
+        </a>
+      </span>
+    </h3>
+    <p className="range">{range}</p>
+    <div dangerouslySetInnerHTML={{ __html: html }} />
+  </React.Fragment>
+);
+
+ActiveJobTitle.propTypes = {
+  title: PropTypes.string,
+  url: PropTypes.string,
+  company: PropTypes.string,
+  range: PropTypes.string,
+  html: PropTypes.string,
+};
+
+const PreviousJobTitle = ({ title, range, html }) => (
+  <div className="previous-job-title">
+    <h4>
+      <span>{title}</span>
+    </h4>
+    <p className="xs-range">{range}</p>
+    <div dangerouslySetInnerHTML={{ __html: html }} />
+  </div>
+);
+
+PreviousJobTitle.propTypes = {
+  title: PropTypes.string,
+  range: PropTypes.string,
+  html: PropTypes.string,
+};
+
 const Jobs = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -326,46 +366,6 @@ const Jobs = () => {
       </div>
     </StyledJobsSection>
   );
-};
-
-const ActiveJobTitle = ({ title, url, company, range, html }) => (
-  <React.Fragment>
-    <h3>
-      <span>{title}</span>
-      <span className="company">
-        &nbsp;@&nbsp;
-        <a href={url} className="inline-link">
-          {company}
-        </a>
-      </span>
-    </h3>
-    <p className="range">{range}</p>
-    <div dangerouslySetInnerHTML={{ __html: html }} />
-  </React.Fragment>
-);
-
-ActiveJobTitle.propTypes = {
-  title: PropTypes.string,
-  url: PropTypes.string,
-  company: PropTypes.string,
-  range: PropTypes.string,
-  html: PropTypes.string,
-};
-
-const PreviousJobTitle = ({ title, range, html }) => (
-  <div className="previous-job-title">
-    <h4>
-      <span>{title}</span>
-    </h4>
-    <p className="xs-range">{range}</p>
-    <div dangerouslySetInnerHTML={{ __html: html }} />
-  </div>
-);
-
-PreviousJobTitle.propTypes = {
-  title: PropTypes.string,
-  range: PropTypes.string,
-  html: PropTypes.string,
 };
 
 export default Jobs;

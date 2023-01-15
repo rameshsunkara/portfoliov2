@@ -12,4 +12,4 @@ url: 'https://www.hpe.com/'
 - Developed diverse reusable components which can support convoluted use cases.
 - Initiated and implemented the usage of Artifactory to improve Developer Experience exponentially for
   not just the core platform team but all the partnering teams as well.
-- Contributed to overall quality by defining release guidelines for publishable Artifacts .
+- Contributed to overall quality by defining release guidelines for publishable Artifacts.
