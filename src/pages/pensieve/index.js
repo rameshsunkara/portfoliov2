@@ -151,10 +151,10 @@ const PensievePage = ({ location, data }) => {
 
       <StyledMainContainer>
         <header>
-          <h1 className="big-heading">Pensieve</h1>
+          <h1 className="big-heading">My Scratch Pad</h1>
           <p className="subtitle">
             <a href="https://www.wizardingworld.com/writing-by-jk-rowling/pensieve">
-              a collection of memories
+              worth writing about (draft version...)
             </a>
           </p>
         </header>
@@ -211,7 +211,10 @@ export default PensievePage;
 export const pageQuery = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { draft: { ne: true } } }
+      filter: {
+        fileAbsolutePath: { regex: "/content/posts/" }
+        frontmatter: { draft: { ne: true } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
