@@ -135,7 +135,7 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Engineering leader with over 12+ years of experience in building software applications
+              Engineering leader with over 15+ years of experience in building software applications
               to solve complex problems lucidly.
               <br />
               <br />

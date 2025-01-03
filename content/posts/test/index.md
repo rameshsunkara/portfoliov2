@@ -1,12 +1,12 @@
 ---
-title: Docker Compose for MongoDB
-description: A working example of Docker Compose for Local Development
-date: 2023-01-11
+title: Build Enterprise Ready REST APIs
+description: Enterprise ready REST API microservice in golang
+date: 2025-01-02
 draft: false
 slug: /pensieve/mongo
 tags:
-  - MongoDB
-  - GO
+  - GOlang
+  - REST APIs
 ---
 
-Check out [this](https://github.com/rameshsunkara/go-rest-api-example/blob/main/docker-compose.yml).
+Check out [this](https://github.com/rameshsunkara/go-rest-api-example/).
