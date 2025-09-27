@@ -135,21 +135,26 @@ const About = () => {
         <StyledText>
           <div>
             <p>
+              Engineering leader with 15+ years of experience in building scalable, high-performance
+              software solutions that solve complex problems with clarity and efficiency. Passionate
+              about designing and architecting reactive, scalable, and user-centric systems that
+              drive business impact.
+              <br />
+              I believe in minimalistic yet powerful solutions, always prioritizing quality over
+              quantity while aligning technology with business goals. A strong advocate for
+              scalability, resilience, and usability, I navigate roadmap discussions with a
+              strategic mindset.
+              <br />
+              An avid learner and innovator, I thrive on prototyping and exploring emerging
+              technologies. With a deep interest in product management, I bridge the gap between
+              engineering and business, ensuring that teams deliver impactful solutions.
+              <br />
+              Currently serving as Architect for the Unified Support Experience Wellness Platform at
+              HPE GreenLake, leading API design and platform strategy to enhance customer support
+              efficiency and reliability while integrating AI-driven solutions where applicable.
               Engineering leader with over 15+ years of experience in building software applications
               to solve complex problems lucidly.
-              <br />
-              <br />
-              I strongly believe in scalable minimalistic solutions. I am passionate about design
-              and architecture of the systems which are enormously scalable, reactive and most
-              importantly usable.
-              <br />
-              <br />
-              Though I occasionally provide middle ground solutions to meet business goals, I always
-              choose quality over quantity and steer the road map discussions accordingly.
-              <br />
-              <br />
-              Being a constant learner, I love prototyping. I have a strong niche for Product
-              Management and I believe in <q>We</q> before <q>I</q>.
+              <br />I believe in <q>We</q> before <q>I</q>.
             </p>
 
             <p>Technologies I’ve been working with recently:</p>
