@@ -36,7 +36,9 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "babel-eslint": "^10.0.0",
     "babel-plugin-styled-components": "^2.1.4",
+    "core-js": "^3.33.2",
     "gatsby": "4.24.0",
     "gatsby-plugin-google-analytics": "^4.24.0",
     "gatsby-plugin-image": "^2.24.0",
@@ -60,10 +62,13 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "react-is": "^18.2.0",
     "react-transition-group": "^4.3.0",
     "scrollreveal": "^4.0.5",
     "sharp": "0.32.6",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.0",
+    "typescript": "^4.9.5",
+    "webpack": "^5.89.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
@@ -72,13 +77,15 @@
     "@upstatement/eslint-config": "^1.0.0",
     "@upstatement/prettier-config": "^1.0.0",
     "babel-preset-gatsby": "^3.12.0",
-    "eslint": "^8.53.0",
-    "eslint-config-prettier": "^9.0.0",
+    "core-js": "^3.33.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
     "gatsby-remark-code-titles": "^1.1.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.1.0",
-    "prettier": "^3.1.0"
+    "prettier": "^2.8.8",
+    "typescript": "^4.9.5"
   }
 }
