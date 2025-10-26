@@ -1,70 +1,85 @@
 ## 🛠 Installation & Set Up
 
-1. Make sure you have Node.js ≥18.0.0 installed. You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node versions:
+1. Make sure you have Node.js ≥22.0.0 installed. You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node versions:
 
    ```sh
-   nvm install 18
-   nvm use 18
+   nvm install 22
+   nvm use 22
    ```
 
-2. Install dependencies (using legacy peer deps for compatibility)
+2. Install yarn if you haven't already
 
    ```sh
-   npm install --legacy-peer-deps
+   npm install -g yarn
    ```
 
-3. Install Gatsby CLI globally
+3. Install dependencies
 
    ```sh
-   npm install -g gatsby-cli
+   yarn install
    ```
 
 4. Start the development server
 
    ```sh
-   npm run develop
+   yarn gatsby develop
    ```
 
-Note: If you encounter any cache-related issues, you can try cleaning the cache:
+Note: If you encounter any cache-related issues:
 
 ```sh
 # Clean Gatsby cache and reinstall dependencies
-rm -rf node_modules .cache public package-lock.json
-npm install --legacy-peer-deps
-npm run develop
+rm -rf node_modules .cache public package-lock.json yarn.lock
+yarn install
+yarn gatsby clean && yarn gatsby develop
 ```
 
 ## � Troubleshooting
 
 If you encounter any issues:
 
-1. Make sure you're using Node.js version 18 or higher
-2. Clear all caches and node_modules:
+1. Make sure you're using Node.js version 22 or higher
+2. Clear all caches and dependencies:
    ```sh
-   rm -rf node_modules .cache public package-lock.json
-   npm cache clean --force
+   rm -rf node_modules .cache public package-lock.json yarn.lock
+   yarn cache clean
    ```
-3. Reinstall dependencies with legacy peer deps flag:
+3. Reinstall dependencies:
    ```sh
-   npm install --legacy-peer-deps
+   yarn install
    ```
-4. If you still have issues, try running with verbose logging:
+4. Try cleaning and rebuilding:
    ```sh
-   GATSBY_LOGGER=verbose npm run develop
+   yarn gatsby clean
+   yarn gatsby develop
    ```
+5. If you still have issues, try running with verbose logging:
+   ```sh
+   GATSBY_LOGGER=verbose GATSBY_TELEMETRY_DISABLED=1 yarn gatsby develop
+   ```
+6. For permission-related issues:
+   ```sh
+   sudo rm -rf .cache public
+   mkdir -p .cache public
+   sudo chmod -R 777 .cache public
+   yarn gatsby develop
+   ```
+
+Note: The `.cache` directory is critical for Gatsby's operation. Always ensure it exists
+before running gatsby develop, and make sure you have write permissions for it.
 
 ## �🚀 Building and Running for Production
 
 1. Generate a full static production build
 
    ```sh
-   npm run build
+   yarn build
    ```
 
-1. Preview the site as it will appear once deployed
+2. Preview the site as it will appear once deployed
 
    ```sh
-   npm run serve
+   yarn serve
    ```
 
 ## 🎨 Color Reference

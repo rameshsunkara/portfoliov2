@@ -1,11 +1,13 @@
 # Project dependencies
-.cache
+.cache/*
+!.cache/.gitkeep
 node_modules
 yarn-error.log
 package-lock.json
 
 # Build directory
-/public
+/public/*
+!/public/.gitkeep
 .DS_Store
 
 .vscode/
