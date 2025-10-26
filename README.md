@@ -1,42 +1,80 @@
 ## 🛠 Installation & Set Up
 
-1. Install the Gatsby CLI
+1. Make sure you have Node.js ≥22.0.0 installed. You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node versions:
 
    ```sh
-   npm install -g gatsby-cli
+   nvm install 22
+   nvm use 22
    ```
 
-2. Install and use the 14 version of Node using [NVM](https://github.com/nvm-sh/nvm)
+2. Install yarn if you haven't already
 
    ```sh
-   nvm install
-   nvm use 14
+   npm install -g yarn
    ```
 
 3. Install dependencies
 
    ```sh
-   yarn
+   yarn install
    ```
 
 4. Start the development server
 
    ```sh
-   npm start
+   yarn gatsby develop
    ```
 
-## 🚀 Building and Running for Production
+## � Troubleshooting
+
+If you encounter any issues:
+
+1. Make sure you're using Node.js version 22 or higher
+2. Try cleaning and rebuilding:
+   ```sh
+   yarn gatsby clean
+   yarn gatsby develop
+   ```
+3. If that doesn't work, try a full clean install:
+   ```sh
+   rm -rf node_modules .cache public yarn.lock
+   yarn install
+   yarn gatsby develop
+   ```
+4. For debugging, you can run with verbose logging:
+   ```sh
+   GATSBY_LOGGER=verbose GATSBY_TELEMETRY_DISABLED=1 yarn gatsby develop
+   ```
+
+## �🚀 Building and Running for Production
 
 1. Generate a full static production build
 
    ```sh
-   npm run build
+   # First clean any previous builds
+   yarn gatsby clean
+
+   # Then run the production build
+   GATSBY_LOGGER=verbose NODE_ENV=production yarn gatsby build
    ```
 
-1. Preview the site as it will appear once deployed
+2. Preview the site as it will appear once deployed
 
    ```sh
-   npm run serve
+   yarn gatsby serve
+   ```
+
+Note: If the build fails, try these steps:
+
+1. Clear all caches and dependencies:
+   ```sh
+   rm -rf node_modules .cache public yarn.lock
+   yarn install
+   ```
+2. Then rebuild:
+   ```sh
+   yarn gatsby clean
+   NODE_ENV=production yarn gatsby build
    ```
 
 ## 🎨 Color Reference

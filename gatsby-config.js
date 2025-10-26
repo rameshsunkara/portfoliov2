@@ -1,6 +1,13 @@
 const config = require('./src/config');
 
 module.exports = {
+  pathPrefix: '/',
+  flags: {
+    DEV_SSR: false,
+    FAST_DEV: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false,
+    PARALLEL_SOURCING: false,
+  },
   siteMetadata: {
     title: 'Ramesh Sunkara',
     description: 'Ramesh Sunkara is an Enterprise Software Architect based in Raleigh, NC',
@@ -76,7 +83,7 @@ module.exports = {
               maxWidth: 700,
               linkImagesToOriginal: true,
               quality: 90,
-              tracedSVG: { color: config.colors.green },
+              withWebp: true,
             },
           },
           {
@@ -154,5 +161,6 @@ module.exports = {
         trackingId: 'UA-45666519-2',
       },
     },
+    `gatsby-plugin-netlify`,
   ],
 };
