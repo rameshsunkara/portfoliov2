@@ -25,61 +25,56 @@
    yarn gatsby develop
    ```
 
-Note: If you encounter any cache-related issues:
-
-```sh
-# Clean Gatsby cache and reinstall dependencies
-rm -rf node_modules .cache public package-lock.json yarn.lock
-yarn install
-yarn gatsby clean && yarn gatsby develop
-```
-
 ## � Troubleshooting
 
 If you encounter any issues:
 
 1. Make sure you're using Node.js version 22 or higher
-2. Clear all caches and dependencies:
-   ```sh
-   rm -rf node_modules .cache public package-lock.json yarn.lock
-   yarn cache clean
-   ```
-3. Reinstall dependencies:
-   ```sh
-   yarn install
-   ```
-4. Try cleaning and rebuilding:
+2. Try cleaning and rebuilding:
    ```sh
    yarn gatsby clean
    yarn gatsby develop
    ```
-5. If you still have issues, try running with verbose logging:
+3. If that doesn't work, try a full clean install:
+   ```sh
+   rm -rf node_modules .cache public yarn.lock
+   yarn install
+   yarn gatsby develop
+   ```
+4. For debugging, you can run with verbose logging:
    ```sh
    GATSBY_LOGGER=verbose GATSBY_TELEMETRY_DISABLED=1 yarn gatsby develop
    ```
-6. For permission-related issues:
-   ```sh
-   sudo rm -rf .cache public
-   mkdir -p .cache public
-   sudo chmod -R 777 .cache public
-   yarn gatsby develop
-   ```
-
-Note: The `.cache` directory is critical for Gatsby's operation. Always ensure it exists
-before running gatsby develop, and make sure you have write permissions for it.
 
 ## �🚀 Building and Running for Production
 
 1. Generate a full static production build
 
    ```sh
-   yarn build
+   # First clean any previous builds
+   yarn gatsby clean
+
+   # Then run the production build
+   GATSBY_LOGGER=verbose NODE_ENV=production yarn gatsby build
    ```
 
 2. Preview the site as it will appear once deployed
 
    ```sh
-   yarn serve
+   yarn gatsby serve
+   ```
+
+Note: If the build fails, try these steps:
+
+1. Clear all caches and dependencies:
+   ```sh
+   rm -rf node_modules .cache public yarn.lock
+   yarn install
+   ```
+2. Then rebuild:
+   ```sh
+   yarn gatsby clean
+   NODE_ENV=production yarn gatsby build
    ```
 
 ## 🎨 Color Reference
