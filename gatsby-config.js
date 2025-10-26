@@ -10,11 +10,10 @@ module.exports = {
   },
   siteMetadata: {
     title: 'Ramesh Sunkara',
-    description:
-      'Ramesh Sunkara is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://rameshsunkara.github.io', // No trailing slash allowed!
+    description: 'Ramesh Sunkara is an Enterprise Software Architect based in Raleigh, NC',
+    siteUrl: 'https://rsunkara.com', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@rameshsunkara',
+    twitterUsername: '@rameshtalks',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

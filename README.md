@@ -1,31 +1,59 @@
 ## 🛠 Installation & Set Up
 
-1. Install the Gatsby CLI
+1. Make sure you have Node.js ≥18.0.0 installed. You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node versions:
+
+   ```sh
+   nvm install 18
+   nvm use 18
+   ```
+
+2. Install dependencies (using legacy peer deps for compatibility)
+
+   ```sh
+   npm install --legacy-peer-deps
+   ```
+
+3. Install Gatsby CLI globally
 
    ```sh
    npm install -g gatsby-cli
    ```
 
-2. Install and use the 14 version of Node using [NVM](https://github.com/nvm-sh/nvm)
-
-   ```sh
-   nvm install
-   nvm use 14
-   ```
-
-3. Install dependencies
-
-   ```sh
-   yarn
-   ```
-
 4. Start the development server
 
    ```sh
-   npm start
+   npm run develop
    ```
 
-## 🚀 Building and Running for Production
+Note: If you encounter any cache-related issues, you can try cleaning the cache:
+
+```sh
+# Clean Gatsby cache and reinstall dependencies
+rm -rf node_modules .cache public package-lock.json
+npm install --legacy-peer-deps
+npm run develop
+```
+
+## � Troubleshooting
+
+If you encounter any issues:
+
+1. Make sure you're using Node.js version 18 or higher
+2. Clear all caches and node_modules:
+   ```sh
+   rm -rf node_modules .cache public package-lock.json
+   npm cache clean --force
+   ```
+3. Reinstall dependencies with legacy peer deps flag:
+   ```sh
+   npm install --legacy-peer-deps
+   ```
+4. If you still have issues, try running with verbose logging:
+   ```sh
+   GATSBY_LOGGER=verbose npm run develop
+   ```
+
+## �🚀 Building and Running for Production
 
 1. Generate a full static production build
 
