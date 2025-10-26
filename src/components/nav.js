@@ -17,12 +17,13 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: rgba(10, 25, 47, 0.6); /* subtle, semi-transparent */
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   transition: var(--transition);
+  /* intentionally no visible box-shadow or border to keep header minimal */
 
   @media (max-width: 1080px) {
     padding: 0 40px;
@@ -38,8 +39,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        background-color: rgba(10, 25, 47, 0.62);
       `};
 
     ${props =>
@@ -47,8 +47,8 @@ const StyledHeader = styled.header`
       !props.scrolledToTop &&
       css`
         height: var(--nav-scroll-height);
-        transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        transform: translateY(0);
+        background-color: rgba(10, 25, 47, 0.62);
       `};
   }
 `;
