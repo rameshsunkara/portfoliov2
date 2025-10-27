@@ -45,7 +45,7 @@ const StyledProjectsSection = styled.section`
 
 const StyledProject = styled.li`
   position: relative;
-  cursor: default;
+  cursor: pointer;
   transition: var(--transition);
 
   @media (prefers-reduced-motion: no-preference) {
@@ -57,9 +57,9 @@ const StyledProject = styled.li`
     }
   }
 
-  a {
+  .project-links a {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 
   .project-inner {
@@ -215,8 +215,33 @@ const Projects = () => {
     const { frontmatter, html } = node;
     const { github, external, title, tech } = frontmatter;
 
+    const handleClick = e => {
+      // If clicking a link in the project-links, don't trigger the main click
+      if (e.target.closest('.project-links')) {
+        return;
+      }
+      // Open the external link or github link if available
+      if (external) {
+        window.open(external, '_blank', 'noopener,noreferrer');
+      } else if (github) {
+        window.open(github, '_blank', 'noopener,noreferrer');
+      }
+    };
+
     return (
-      <div className="project-inner">
+      <div
+        className="project-inner"
+        onClick={handleClick}
+        onKeyDown={e => {
+          // Handle Enter or Space key
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleClick(e);
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        aria-label={`${title} project. Click to learn more`}>
         <header>
           <div className="project-top">
             <div className="folder">
@@ -241,11 +266,7 @@ const Projects = () => {
             </div>
           </div>
 
-          <h3 className="project-title">
-            <a href={external} target="_blank" rel="noreferrer">
-              {title}
-            </a>
-          </h3>
+          <h3 className="project-title">{title}</h3>
 
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
