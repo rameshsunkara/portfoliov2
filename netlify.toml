@@ -1,0 +1,2 @@
+[build.environment]
+  NPM_CONFIG_BUILD_FROM_SOURCE = "true"
