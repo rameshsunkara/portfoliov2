@@ -65,10 +65,10 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m an Enterprise Software Architect based in Raleigh - Durham, NC, currently working as
-        Principal Cloud Developer at{' '}
-        <a href="https://www.hpe.com/us/en/home.html" target="_blank" rel="noreferrer">
-          HPE
+        I'm an Enterprise Software Architect based in Raleigh, NC, and currently working as Senior
+        Security Development Engineer at{' '}
+        <a href="https://www.nvidia.com/" target="_blank" rel="noreferrer">
+          Nvidia
         </a>
         .
       </p>

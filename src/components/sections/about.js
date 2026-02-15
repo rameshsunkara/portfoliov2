@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['GO', 'AWS', 'MongoDB', 'Kafka', 'Java', 'Spring', 'JavaScript', 'React'];
+  const skills = ['GO', 'AWS', 'MongoDB', 'Kafka', 'Java', 'Spring', 'JavaScript', 'Python'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,7 +135,7 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Engineering leader with 15+ years of experience in building scalable, high-performance
+              Engineering leader with 16+ years of experience in building scalable, high-performance
               software solutions that solve complex problems with clarity and efficiency.
               <br />
               <br />
@@ -148,9 +148,8 @@ const About = () => {
               business, ensuring that teams deliver impactful solutions.
               <br />
               <br />
-              Currently serving as Architect for the Unified Support Experience Wellness Platform at
-              HPE GreenLake, leading API design and platform strategy to enhance customer support
-              efficiency and reliability while integrating AI-driven solutions where applicable.
+              Currently serving as Senior Security Development Engineer at Nvidia, architecting and
+              implementing security platform to safeguard NVIDIA products and systems.
               <br />
               <br />I believe in <q>We</q> before <q>I</q>.
             </p>
