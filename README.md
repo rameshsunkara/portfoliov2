@@ -1,10 +1,10 @@
 ## 🛠 Installation & Set Up
 
-1. Make sure you have Node.js `24.x` installed. You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node versions:
+1. Make sure you have Node.js `24.13.1` installed. You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node versions:
 
    ```sh
-   nvm install 24
-   nvm use 24
+   nvm install 24.13.1
+   nvm use 24.13.1
    ```
 
 2. Enable Corepack (recommended). This repo pins Yarn `4.12.0`.
@@ -30,7 +30,7 @@
 
 If you encounter any issues:
 
-1. Make sure you're using Node.js version 24.x
+1. Make sure you're using Node.js version 24.13.1
 2. Try cleaning and rebuilding:
    ```sh
    yarn gatsby clean
