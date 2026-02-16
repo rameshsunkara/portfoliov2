@@ -4,7 +4,7 @@
   "version": "1.1.0",
   "author": "Ramesh Sunkara <rsunkara929@gmail.com>",
   "engines": {
-    "node": ">=22.0.0",
+    "node": ">=20.0.0",
     "npm": ">=10.0.0"
   },
   "repository": {
