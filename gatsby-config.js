@@ -1,6 +1,11 @@
 const config = require('./src/config');
+const adapter = require('gatsby-adapter-netlify').default;
 
 module.exports = {
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: false,
+    imageCDN: false,
+  }),
   pathPrefix: '/',
   flags: {
     DEV_SSR: false,
@@ -161,6 +166,5 @@ module.exports = {
         trackingId: 'UA-45666519-2',
       },
     },
-    `gatsby-plugin-netlify`,
   ],
 };
