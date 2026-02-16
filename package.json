@@ -4,9 +4,10 @@
   "version": "1.1.0",
   "author": "Ramesh Sunkara <rsunkara929@gmail.com>",
   "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
+    "node": "20.x",
+    "npm": "10.x"
   },
+  "packageManager": "yarn@1.22.22",
   "repository": {
     "type": "git",
     "url": "https://github.com/rameshsunkara/portfoliov2"
