@@ -7,7 +7,7 @@ const path = require('path');
 // and place it under node_modules/sharp/install so sharp's installer
 // can use the prebuilt binaries on Netlify (or other CI) when available.
 
-const LIBVIPS_VERSION = process.env.LIBVIPS_VERSION || '8.17.3';
+const LIBVIPS_VERSION = process.env.LIBVIPS_VERSION || '8.12.2';
 
 function getTarget() {
   const p = process.platform;
