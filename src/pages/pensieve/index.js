@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Layout } from '@components';
+import SiteHead from '@components/head';
 import { IconBookmark } from '@components/icons';
 
 const StyledMainContainer = styled.main`
@@ -147,8 +147,6 @@ const PensievePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Helmet title="Pensieve" />
-
       <StyledMainContainer>
         <header>
           <h1 className="big-heading">My Scratch Pad</h1>
@@ -207,6 +205,16 @@ PensievePage.propTypes = {
 };
 
 export default PensievePage;
+
+const PageHead = ({ location }) => <SiteHead title="Pensieve" pathname={location.pathname} />;
+
+PageHead.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+export const Head = PageHead;
 
 export const pageQuery = graphql`
   {
