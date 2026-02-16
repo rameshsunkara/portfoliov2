@@ -1,2 +1,4 @@
 [build.environment]
-  NPM_CONFIG_BUILD_FROM_SOURCE = "true"
+  # Prefer prebuilt libvips binaries to avoid needing system packages for build-from-source
+  npm_config_sharp_binary_host = "https://github.com/lovell/sharp-libvips/releases/download/"
+  SHARP_DIST_BASE_URL = "https://github.com/lovell/sharp-libvips/releases/download/"
