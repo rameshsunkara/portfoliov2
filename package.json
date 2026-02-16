@@ -7,7 +7,7 @@
     "node": "24.x",
     "npm": ">=10.0.0"
   },
-  "packageManager": "yarn@1.22.22",
+  "packageManager": "yarn@4.12.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/rameshsunkara/portfoliov2"
@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
-    "babel-eslint": "^10.0.0",
     "babel-plugin-styled-components": "^2.1.4",
     "core-js": "^3.33.2",
     "gatsby": "5.16.1",
@@ -72,10 +71,9 @@
   "devDependencies": {
     "@babel/core": "^7.23.3",
     "@babel/eslint-parser": "^7.23.3",
-    "@babel/preset-react": "^7.23.3",
     "@upstatement/eslint-config": "^1.0.0",
     "@upstatement/prettier-config": "^1.0.0",
-    "babel-preset-gatsby": "^3.12.0",
+    "baseline-browser-mapping": "^2.9.19",
     "core-js": "^3.33.2",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.10.0",

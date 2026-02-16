@@ -7,11 +7,11 @@
    nvm use 24
    ```
 
-2. Enable Corepack and activate the project Yarn version (`1.22.22`)
+2. Enable Corepack (recommended). This repo pins Yarn `4.12.0`.
 
    ```sh
    corepack enable
-   corepack prepare yarn@1.22.22 --activate
+   corepack prepare yarn@4.12.0 --activate
    ```
 
 3. Install dependencies
