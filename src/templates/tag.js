@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Layout } from '@components';
+import SiteHead from '@components/head';
 
 const StyledTagsContainer = styled.main`
   max-width: 1000px;
@@ -51,8 +51,6 @@ const TagTemplate = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location}>
-      <Helmet title={`Tagged: #${tag}`} />
-
       <StyledTagsContainer>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>
@@ -101,6 +99,21 @@ const TagTemplate = ({ pageContext, data, location }) => {
 };
 
 export default TagTemplate;
+
+const PageHead = ({ location, pageContext }) => (
+  <SiteHead title={`Tagged: #${pageContext.tag}`} pathname={location.pathname} />
+);
+
+PageHead.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+  pageContext: PropTypes.shape({
+    tag: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+export const Head = PageHead;
 
 TagTemplate.propTypes = {
   pageContext: PropTypes.shape({

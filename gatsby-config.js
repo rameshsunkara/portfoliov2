@@ -1,5 +1,7 @@
 const config = require('./src/config');
 const adapter = require('gatsby-adapter-netlify').default;
+const siteUrl = process.env.SITE_URL || 'https://rsunkara.com';
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION || '';
 
 module.exports = {
   adapter: adapter({
@@ -16,12 +18,12 @@ module.exports = {
   siteMetadata: {
     title: 'Ramesh Sunkara',
     description: 'Ramesh Sunkara is an Enterprise Software Architect based in Raleigh, NC',
-    siteUrl: 'https://rsunkara.com', // No trailing slash allowed!
+    siteUrl, // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@rameshtalks',
+    googleSiteVerification,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,

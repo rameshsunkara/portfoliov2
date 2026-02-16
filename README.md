@@ -26,6 +26,26 @@
    yarn gatsby develop
    ```
 
+## SEO Setup
+
+1. Set your canonical site URL and verification token as environment variables:
+
+   - `SITE_URL` (for example `https://yourdomain.com`)
+   - `GOOGLE_SITE_VERIFICATION` (your Google Search Console token)
+
+2. In Netlify, add these under:
+
+   - Site settings -> Build & deploy -> Environment
+
+3. To generate your own Google verification token:
+
+   - Open Google Search Console
+   - Add your property (Domain or URL prefix)
+   - Choose HTML tag verification and copy the `content` value
+   - Set that value in `GOOGLE_SITE_VERIFICATION`
+
+4. Redeploy after updating env vars.
+
 ## � Troubleshooting
 
 If you encounter any issues:
