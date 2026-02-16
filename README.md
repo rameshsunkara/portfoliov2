@@ -1,16 +1,17 @@
 ## 🛠 Installation & Set Up
 
-1. Make sure you have Node.js ≥22.0.0 installed. You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node versions:
+1. Make sure you have Node.js `24.x` installed. You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node versions:
 
    ```sh
-   nvm install 22
-   nvm use 22
+   nvm install 24
+   nvm use 24
    ```
 
-2. Install yarn if you haven't already
+2. Enable Corepack and activate the project Yarn version (`1.22.22`)
 
    ```sh
-   npm install -g yarn
+   corepack enable
+   corepack prepare yarn@1.22.22 --activate
    ```
 
 3. Install dependencies
@@ -29,7 +30,7 @@
 
 If you encounter any issues:
 
-1. Make sure you're using Node.js version 22 or higher
+1. Make sure you're using Node.js version 24.x
 2. Try cleaning and rebuilding:
    ```sh
    yarn gatsby clean

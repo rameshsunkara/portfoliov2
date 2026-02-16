@@ -4,8 +4,8 @@
   "version": "1.1.0",
   "author": "Ramesh Sunkara <rsunkara929@gmail.com>",
   "engines": {
-    "node": "20.x",
-    "npm": "10.x"
+    "node": "24.x",
+    "npm": ">=10.0.0"
   },
   "packageManager": "yarn@1.22.22",
   "repository": {
@@ -67,8 +67,7 @@
     "react-transition-group": "^4.3.0",
     "scrollreveal": "^4.0.5",
     "styled-components": "^5.3.0",
-    "typescript": "^4.9.5",
-    "webpack": "^5.89.0"
+    "typescript": "^4.9.5"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
