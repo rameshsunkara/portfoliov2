@@ -19,19 +19,37 @@ function getTarget() {
   return null;
 }
 
-async function download(url, dest) {
+async function download(url, dest, redirects = 0) {
   return new Promise((resolve, reject) => {
+    if (redirects > 5) {
+      return reject(new Error(`Too many redirects for ${url}`));
+    }
+
     const file = fs.createWriteStream(dest);
     https
-      .get(url, (res) => {
+      .get(url, res => {
+        // Handle redirects (301, 302, 303, 307, 308)
+        if ([301, 302, 303, 307, 308].includes(res.statusCode)) {
+          file.destroy();
+          fs.unlinkSync(dest, { force: true });
+          const redirectUrl = res.headers.location;
+          if (!redirectUrl) {
+            return reject(new Error(`Redirect without location header - Status ${res.statusCode}`));
+          }
+          return download(redirectUrl, dest, redirects + 1)
+            .then(resolve)
+            .catch(reject);
+        }
+
         if (res.statusCode !== 200) {
+          file.destroy();
           fs.unlinkSync(dest, { force: true });
           return reject(new Error(`Failed to download ${url} - Status ${res.statusCode}`));
         }
         res.pipe(file);
         file.on('finish', () => file.close(resolve));
       })
-      .on('error', (err) => {
+      .on('error', err => {
         fs.unlinkSync(dest, { force: true });
         reject(err);
       });
