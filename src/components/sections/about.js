@@ -148,7 +148,7 @@ const About = () => {
               business, ensuring that teams deliver impactful solutions.
               <br />
               <br />
-              Currently serving as Senior Security Development Engineer at Nvidia, architecting and
+              Currently serving as Senior Security Development Engineer at NVIDIA, architecting and
               implementing security platform to safeguard NVIDIA products and systems.
               <br />
               <br />I believe in <q>We</q> before <q>I</q>.

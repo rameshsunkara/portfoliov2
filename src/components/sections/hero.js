@@ -68,7 +68,7 @@ const Hero = () => {
         I'm an Enterprise Software Architect based in Raleigh, NC, and currently working as Senior
         Security Development Engineer at{' '}
         <a href="https://www.nvidia.com/" target="_blank" rel="noreferrer">
-          Nvidia
+          NVIDIA
         </a>
         .
       </p>
